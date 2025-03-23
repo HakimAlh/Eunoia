@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect, useContext } from "react";
 import * as bookService from '../../services/bookService';
 import { Link } from "react-router-dom";
-// import { AuthenticatedUserContext } from '../../App';
+// import { AuthedUserContext } from '../../App';
 
 
 const BookDetails = (props) => {
@@ -33,13 +33,13 @@ useEffect(() => {
           {book.author.username} posted on
           {new Date(book.createdAt).toLocaleDateString()}
         </p>
-        {/* {book.author._id === user._id && (
+        {/* {book.author._id === user._id && ( */}
 					<>
 						<button onClick={() => props.handleDeleteBook(bookId)}>
 							Delete
 						</button>
 					</>
-                    	)} */}
+                    	{/* // )} */}
       </header>
       <p>{book.text}</p>
       <section>
