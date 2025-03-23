@@ -10,7 +10,7 @@ const BookList = (props) => {
                 <header>
                   <h2>{book.title}</h2>
                   <p>
-                    Author: {book.author.username}
+
                   </p>
                 </header>
                 <p>Category: {book.category}</p>

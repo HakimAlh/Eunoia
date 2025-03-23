@@ -1,5 +1,5 @@
 // REACT RESOURCE
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate} from "react-router-dom";
 import { useState, createContext, useEffect } from "react";
 
 //COMPONENTS
@@ -19,12 +19,14 @@ import * as authService from "../src/services/authService";
 //BOOKS
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
+import BookForm from './components/BookForm/BookForm';
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser());
 
 
 	const [books, setBooks] = useState([]);
+  const navigate = useNavigate();
 
 	useEffect(() => {
 		const fetchAllBooks = async () => {
@@ -39,6 +41,11 @@ const App = () => {
 		setUser(null);
 	};
 
+  const handleAddBook = async (bookFormData) => {
+    const newBook = await bookService.create(bookFormData);
+  setBooks([newBook, ...books]);
+  navigate('/books');
+};
 	return (
 		<>
 			<NavBar user={user} handleSignout={handleSignout} />
@@ -47,7 +54,9 @@ const App = () => {
 					<>
 						<Route path="/" element={<Dashboard user={user} />} />
 						<Route path="/books" element={<BookList books={books} />} />
-            <Route path="/books/:bookId" element={<BookDetails />} />
+            <Route path="/books/:bookId" element={<BookDetails/>} />
+          , useNavigate
+          <Route path="/books/publish" element={<BookForm handleAddBook={handleAddBook} />} />
 					</>
 				) : (
 					<Route path="/" element={<Landing />} />
