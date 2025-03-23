@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import styles from '../BookList/BookList.module.css';
+
 
 const BookList = (props) => {
 	return (
-        <main>
+        <main className={styles.container}>
           {props.books.map((book) => (
             <Link key={book._id} to={`/books/${book._id}`}>
               <article>

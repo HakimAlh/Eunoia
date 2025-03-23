@@ -1,0 +1,19 @@
+/* p {
+    color: red;
+} */
+
+main {
+    display:flex;
+    width: 50vw;
+    height: 30vw;
+    justify-content: center;
+    margin-left: 25vw;
+}
+
+img {
+    filter: blur(3px);
+}
+
+h5 {
+    font-size: 50px;
+}

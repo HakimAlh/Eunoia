@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import * as bookService from "../../services/bookService";
 import { Link } from "react-router-dom";
 // import { AuthenticatedUserContext } from '../../App';
+import styles from '../BookDetails/BookDetails.module.css'
 
 const BookDetails = (props) => {
 	const { bookId } = useParams();
@@ -22,7 +23,7 @@ const BookDetails = (props) => {
 	if (!book) return <main>Loading...</main>;
 
 	return (
-		<main>
+		<main className={styles.container}>
 			<header>
 				<p>{book.category.toUpperCase()}</p>
 				<h1>{book.title}</h1>

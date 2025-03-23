@@ -2,6 +2,10 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, createContext, useEffect } from "react";
 
+// BOOTSTRAP
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 //COMPONENTS
 import NavBar from "./components/NavBar/NavBar";
 import Landing from "./components/Landing/Landing";

@@ -49,7 +49,7 @@ const BookForm = (props) => {
 				<label htmlFor="cover-input">Cover</label>
 				<input
 					required
-					type="text"
+					type="file"
 					name="cover"
 					id="cover-input"
 					value={formData.cover}
