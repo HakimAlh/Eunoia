@@ -9,9 +9,9 @@ const NavBar = ({ user, handleSignout }) => {
           Eunoia
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/books/publish">Publish</Link></li>
+           <li> <button class="button"><Link to="/books/publish">Publish</Link></button></li>
             <li><Link to='/books'>Books</Link></li>
-            <li><Link to="" onClick={handleSignout}>Sign Out</Link></li>
+            <li><button id='signs'><Link to="" onClick={handleSignout}>Sign Out</Link></button></li>
           </ul>
         </nav>
       ) : (

@@ -46,6 +46,13 @@ const App = () => {
   setBooks([newBook, ...books]);
   navigate('/books');
 };
+
+const handleDeleteBook = async (bookId) => {
+  const deletedBook = await bookService.deleteBook(bookId);
+  setBooks(books.filter((book) => book._id !== deletedBook._id));
+  navigate('/books');
+};
+
 	return (
 		<>
 			<NavBar user={user} handleSignout={handleSignout} />
@@ -54,7 +61,7 @@ const App = () => {
 					<>
 						<Route path="/" element={<Dashboard user={user} />} />
 						<Route path="/books" element={<BookList books={books} />} />
-            <Route path="/books/:bookId" element={<BookDetails/>} />
+            <Route path="/books/:bookId" element={<BookDetails handleDeleteBook={handleDeleteBook}/>} />
           , useNavigate
           <Route path="/books/publish" element={<BookForm handleAddBook={handleAddBook} />} />
 					</>
