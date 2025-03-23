@@ -10,5 +10,17 @@ const index = async () => {
       console.log(error);
     }
   };
+
+  const show = async (bookId) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${bookId}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
-  export { index };
+  
+  export { index, show };
