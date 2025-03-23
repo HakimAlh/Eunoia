@@ -14,7 +14,7 @@ useEffect(() => {
     const fetchBook = async () => {
       const bookData = await bookService.show(bookId);
       console.log('bookData', bookData);
-      setHoot(bookData);
+      setBook(bookData);
     };
     fetchBook();
   }, [bookId]);

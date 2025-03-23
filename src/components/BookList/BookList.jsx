@@ -2,9 +2,6 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const BookList = (props) => {
-	const { bookId } = useParams();
-	console.log("bookId", bookId);
-
 	return (
         <main>
           {props.books.map((book) => (
