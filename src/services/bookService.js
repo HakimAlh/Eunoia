@@ -54,4 +54,20 @@ const deleteBook = async (bookId) => {
     }
   };
   
-  export { index, show, create, deleteBook};
+  async function update(bookId, bookFormData) {
+    try {
+      const res = await fetch(`${BASE_URL}/${bookId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  export { index, show, create, deleteBook, update};

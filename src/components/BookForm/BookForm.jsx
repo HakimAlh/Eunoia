@@ -1,25 +1,42 @@
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import * as bookService from '../../services/bookService';
 
 const BookForm = (props) => {
 	const [formData, setFormData] = useState({
-		title: '',
-        covers: '',
-        description: '',
-		category: 'General',
+		title: "",
+		covers: "",
+		description: "",
+		category: "General",
 	});
+
+	const { bookId } = useParams();
 
 	const handleChange = (evt) => {
 		setFormData({ ...formData, [evt.target.name]: evt.target.value });
 	};
 
 	const handleSubmit = (evt) => {
-		evt.preventDefault();
-		props.handleAddBook(formData);
-	};
+        evt.preventDefault();
+        if (bookId) {
+          props.handleUpdateBook(bookId, formData);
+        } else {
+          props.handleAddBook(formData);
+        }
+      };
+
+    useEffect(() => {
+        const fetchBook = async () => {
+          const bookData = await bookService.show(bookId);
+          setFormData(bookData);
+        };
+        if (bookId) fetchBook();
+      }, [bookId]);
 
 	return (
 		<main>
 			<form onSubmit={handleSubmit}>
+				<h1>{bookId ? "Edit Your Book" : "Add your new Book"}</h1>
 				<label htmlFor="title-input">Title</label>
 				<input
 					required
@@ -29,7 +46,7 @@ const BookForm = (props) => {
 					value={formData.title}
 					onChange={handleChange}
 				/>
-                <label htmlFor="cover-input">Cover</label>
+				<label htmlFor="cover-input">Cover</label>
 				<input
 					required
 					type="text"

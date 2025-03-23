@@ -38,6 +38,7 @@ useEffect(() => {
 						<button onClick={() => props.handleDeleteBook(bookId)}>
 							Delete
 						</button>
+                        <Link to={`/books/${bookId}/edit`}>Edit</Link>
 					</>
                     	{/* // )} */}
       </header>
