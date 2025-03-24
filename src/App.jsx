@@ -11,7 +11,6 @@ import NavBar from "./components/NavBar/NavBar";
 import Landing from "./components/Landing/Landing";
 import Dashboard from "./components/Dashboard/Dashboard";
 
-
 //AUTH
 import SignupForm from "./components/SignupForm/SignupForm";
 import SigninForm from "./components/SigninForm/SigninForm";
@@ -24,6 +23,8 @@ import * as authService from "../src/services/authService";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 import BookForm from "./components/BookForm/BookForm";
+import ChapterEditor from "./components/ChapterEditor/ChapterEditor";
+import ChapterView from "./components/ChapterView/ChapterView";
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser());
@@ -71,7 +72,6 @@ const App = () => {
 				{user ? (
 					<>
 						<Route path="/" element={<Dashboard user={user} />} />
-						<Route path="/docs/:id" element={<Editor />} />
 						<Route path="/books" element={<BookList books={books} />} />
 						<Route
 							path="/books/:bookId"
@@ -80,6 +80,14 @@ const App = () => {
 						<Route
 							path="/books/:bookId/edit"
 							element={<BookForm handleUpdateBook={handleUpdateBook} />}
+						/>
+						<Route
+							path="/books/:bookId/chapter"
+							element={<ChapterEditor />}
+						/>
+						<Route
+							path="/books/:bookId/:chapterId"
+							element={<ChapterView />}
 						/>
 						, useNavigate
 						<Route

@@ -93,3 +93,8 @@
     font-family: Kavivanar, sans-serif;
     font-size: 18px;
   }
+
+  main {
+    width: 50vw;
+    margin-left: 26vw;
+}

@@ -10,7 +10,7 @@ const NavBar = ({ user, handleSignout }) => {
 			/>
 			{user ? (
 				<nav className={styles.container}>
-					<span class="material-symbols-outlined">menu_book</span>
+					<span className="material-symbols-outlined">menu_book</span>
 					<Link to="/">Eunoia</Link>
 					<ul>
 						<li>

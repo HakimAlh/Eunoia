@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import * as bookService from '../../services/bookService';
+import '../../index.css';
 
 const BookForm = (props) => {
 	const [formData, setFormData] = useState({
