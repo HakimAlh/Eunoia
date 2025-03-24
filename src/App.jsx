@@ -1,5 +1,5 @@
 // REACT RESOURCE
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate} from "react-router-dom";
 import { useState, createContext, useEffect } from "react";
 
 // BOOTSTRAP
@@ -10,6 +10,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import NavBar from "./components/NavBar/NavBar";
 import Landing from "./components/Landing/Landing";
 import Dashboard from "./components/Dashboard/Dashboard";
+
 
 //AUTH
 import SignupForm from "./components/SignupForm/SignupForm";
@@ -56,12 +57,12 @@ const App = () => {
 	};
 
 	const handleUpdateBook = async (bookId, bookFormData) => {
-    const updatedBook = await bookService.update(bookId, bookFormData);
-  
-    setBooks(books.map((book) => (bookId === book._id ? updatedBook : book)));
-  
-    navigate(`/books/${bookId}`);
-  };
+		const updatedBook = await bookService.update(bookId, bookFormData);
+
+		setBooks(books.map((book) => (bookId === book._id ? updatedBook : book)));
+
+		navigate(`/books/${bookId}`);
+	};
 
 	return (
 		<>
@@ -70,19 +71,25 @@ const App = () => {
 				{user ? (
 					<>
 						<Route path="/" element={<Dashboard user={user} />} />
+						<Route path="/docs/:id" element={<Editor />} />
 						<Route path="/books" element={<BookList books={books} />} />
 						<Route
 							path="/books/:bookId"
 							element={<BookDetails handleDeleteBook={handleDeleteBook} />}
 						/>
-            	<Route
+						<Route
 							path="/books/:bookId/edit"
 							element={<BookForm handleUpdateBook={handleUpdateBook} />}
 						/>
 						, useNavigate
 						<Route
 							path="/books/publish"
-							element={<BookForm handleAddBook={handleAddBook} handleUpdateBook={handleUpdateBook}/>}
+							element={
+								<BookForm
+									handleAddBook={handleAddBook}
+									handleUpdateBook={handleUpdateBook}
+								/>
+							}
 						/>
 					</>
 				) : (

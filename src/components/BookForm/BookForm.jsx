@@ -5,7 +5,7 @@ import * as bookService from '../../services/bookService';
 const BookForm = (props) => {
 	const [formData, setFormData] = useState({
 		title: "",
-		covers: "",
+		cover: "",
 		description: "",
 		category: "General",
 	});
