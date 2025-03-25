@@ -1,8 +1,8 @@
-import styles from "../ChapterEditor/ChapterEditor.module.css";
+import styles from "../ChapterForm/ChapterForm.module.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const ChapterEditor = (props) => {
+const ChapterForm = (props) => {
 	const [formData, setFormData] = useState({ 
 		title: "",
 		content: ""
@@ -61,4 +61,4 @@ const ChapterEditor = (props) => {
 	);
 };
 
-export default ChapterEditor;
+export default ChapterForm;

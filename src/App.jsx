@@ -23,8 +23,9 @@ import * as authService from "../src/services/authService";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 import BookForm from "./components/BookForm/BookForm";
-import ChapterEditor from "./components/ChapterEditor/ChapterEditor";
-import ChapterNew from "./components/ChapterView/ChapterNew";
+import ChapterNew from "./components/ChapterNew/ChapterNew";
+import ChapterView from "./components/ChapterView/ChapterView";
+
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser());
@@ -68,16 +69,8 @@ const App = () => {
 	};
 
 
-	// // CHAPTER CRUD
-	// const handleAddChapter = async (chapterFormData) => {
-	// 	const newChapter = await bookService.create(chapterFormData);
-	// 	setBook({ ...books, chapters: [...books.chapters, newChapter] });
-	// 	navigate(`/books/ChapterNew`);
-	// };
 
 
-
-	//
 	return (
 		<>
 			<NavBar user={user} handleSignout={handleSignout} />
@@ -95,8 +88,11 @@ const App = () => {
 							element={<BookForm handleUpdateBook={handleUpdateBook} />}
 						/>
 						<Route
+							path="/books/:bookId/ChapterView"
+							element={<ChapterView />}
+						/>
+						<Route
 							path="/books/:bookId/chapter"
-							// element={<ChapterEditor handleAddChapter={handleAddChapter}/>}
 						/>
 						<Route
 							path="/books/:bookId/ChapterNew"

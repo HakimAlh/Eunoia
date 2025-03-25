@@ -2,7 +2,7 @@ import * as bookService from "../../services/bookService";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import ChapterEditor from "../ChapterEditor/ChapterEditor";
+import ChapterForm from "../ChapterForm/ChapterForm";
 
 const ChapterNew = (props) => {
 	const { bookId } = useParams();
@@ -24,7 +24,7 @@ const ChapterNew = (props) => {
 
 	return (
 		<>
-			<ChapterEditor handleAddChapter={handleAddChapter} />
+			<ChapterForm handleAddChapter={handleAddChapter} />
 		</>
 	);
 };
