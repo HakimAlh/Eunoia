@@ -35,7 +35,7 @@ const BookDetails = (props) => {
 				<>
 					<button onClick={() => props.handleDeleteBook(bookId)}>Delete</button>
                     <Link to={`/books/${bookId}/edit`}>Edit</Link>
-					<Link to={`/books/${bookId}/chapter`}>Add a Chapter</Link>
+					<Link to={`/books/${bookId}/ChapterNew`}>Add a Chapter</Link>
 				</>
 				{/* )} */}
 			</header>

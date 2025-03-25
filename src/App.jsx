@@ -99,7 +99,7 @@ const App = () => {
 							// element={<ChapterEditor handleAddChapter={handleAddChapter}/>}
 						/>
 						<Route
-							path="/books/ChapterNew"
+							path="/books/:bookId/ChapterNew"
 							element={<ChapterNew />}
 						/>
 						, useNavigate

@@ -1,7 +1,6 @@
 import styles from "../ChapterEditor/ChapterEditor.module.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import * as bookService from '../../services/bookService';
 
 const ChapterEditor = (props) => {
 	const [formData, setFormData] = useState({ 
@@ -16,8 +15,7 @@ const ChapterEditor = (props) => {
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
 		props.handleAddChapter(formData);
-		setFormData({ 
-			
+		setFormData({ 			
 			title: "",
 			content: ""
 		
@@ -28,9 +26,9 @@ const ChapterEditor = (props) => {
 		<>
 			<main className={styles.container}>
 				<form onSubmit={handleSubmit}>
-					<div class="card text-center">
-						<div class="card-header">
-							<label for="exampleFormControlInput1" class="form-label">
+					<div className="card text-center">
+						<div className="card-header">
+							<label htmlFor="exampleFormControlInput1" className="form-label">
 							</label>
 							<input
 					required
@@ -41,21 +39,21 @@ const ChapterEditor = (props) => {
 					onChange={handleChange}
 				/>
 						</div>
-						<div class="card-body">
-							<div class="mb-3">
-							<label htmlFor="description-input">Description</label>
+						<div className="card-body">
+							<div className="mb-3">
+							<label htmlFor="content-input">Content</label>
 				<textarea
 					required
 					type="text"
-					name="description"
-					id="description-input"
-					value={formData.description}
+					name="content"
+					id="content-input"
+					value={formData.content}
 					onChange={handleChange}
 				/>
 							</div>
 							<button type="submit">SUBMIT</button>
 						</div>
-						<div class="card-footer text-body-secondary"></div>
+						<div className="card-footer text-body-secondary"></div>
 					</div>
 				</form>
 			</main>

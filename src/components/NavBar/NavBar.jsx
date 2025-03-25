@@ -15,13 +15,13 @@ const NavBar = ({ user, handleSignout }) => {
 					<ul>
 						<li>
 							{" "}
-							<button class="button">
+							<button className="button">
 								<Link to="/books/publish">Publish</Link>
 							</button>
 						</li>
 						<li>
 							{" "}
-							<button class="button">
+							<button className="button">
 								<Link to="/books/">Books</Link>
 							</button>
 						</li>
