@@ -24,11 +24,12 @@ import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 import BookForm from "./components/BookForm/BookForm";
 import ChapterEditor from "./components/ChapterEditor/ChapterEditor";
-import ChapterView from "./components/ChapterView/ChapterView";
+import ChapterNew from "./components/ChapterView/ChapterNew";
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser());
 	const [books, setBooks] = useState([]);
+	const [chapters, setChapters] = useState([]);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -43,6 +44,7 @@ const App = () => {
 		authService.signout();
 		setUser(null);
 	};
+
 
 	// CRUD
 	const handleAddBook = async (bookFormData) => {
@@ -65,6 +67,17 @@ const App = () => {
 		navigate(`/books/${bookId}`);
 	};
 
+
+	// // CHAPTER CRUD
+	// const handleAddChapter = async (chapterFormData) => {
+	// 	const newChapter = await bookService.create(chapterFormData);
+	// 	setBook({ ...books, chapters: [...books.chapters, newChapter] });
+	// 	navigate(`/books/ChapterNew`);
+	// };
+
+
+
+	//
 	return (
 		<>
 			<NavBar user={user} handleSignout={handleSignout} />
@@ -83,11 +96,11 @@ const App = () => {
 						/>
 						<Route
 							path="/books/:bookId/chapter"
-							element={<ChapterEditor />}
+							// element={<ChapterEditor handleAddChapter={handleAddChapter}/>}
 						/>
 						<Route
-							path="/books/:bookId/:chapterId"
-							element={<ChapterView />}
+							path="/books/ChapterNew"
+							element={<ChapterNew />}
 						/>
 						, useNavigate
 						<Route

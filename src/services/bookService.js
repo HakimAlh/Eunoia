@@ -54,6 +54,23 @@ const deleteBook = async (bookId) => {
     }
   };
   
+  const createChapter = async (bookId, chapterFormData) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${bookId}/chapter`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(chapterFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
   async function update(bookId, bookFormData) {
     try {
       const res = await fetch(`${BASE_URL}/${bookId}`, {
@@ -70,4 +87,6 @@ const deleteBook = async (bookId) => {
     }
   }
 
-  export { index, show, create, deleteBook, update};
+  
+
+  export { index, show, create, deleteBook, createChapter, update};

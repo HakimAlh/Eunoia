@@ -1,15 +1,15 @@
 import ChapterEditor from '../ChapterEditor/ChapterEditor';
 
-const ChapterView = (props) => {
+const ChapterNew = () => {
     const handleAddChapter = async (chapterFormData) => {
-        const newChapter = await chapterService.createChapter(bookId, chapterFormData);
+        const newChapter = await bookService.createChapter(bookId, chapterFormData);
         setBook({ ...book, chapters: [...book.chapters, newChapter] });};
 
 	return (
-		<>
-        <ChapterEditor  handleAddChapter={handleAddChapter}/>
+       <>
+		<ChapterEditor handleAddChapter={handleAddChapter}/>
         </>
     )
 }
 
-export default ChapterView;
+export default ChapterNew;
