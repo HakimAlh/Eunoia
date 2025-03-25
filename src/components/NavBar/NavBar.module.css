@@ -41,7 +41,7 @@
     }
   }
   button {
-    border: black solid 1px;
+    border: rgb(163, 163, 163) solid 1px;
     border-radius: 30px;
     width: 8vw;
     height: 2vw;
@@ -52,3 +52,6 @@
   /* .material-symbols-outlined{
     margin: 20px;
   } */
+   nav {
+    background-color: rgba(255, 243, 243, 0.728);
+   }
