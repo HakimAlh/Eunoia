@@ -19,12 +19,12 @@ const NavBar = ({ user, handleSignout }) => {
 								<Link to="/books/publish">Publish</Link>
 							</button>
 						</li>
-						<li>
+						{/* <li>
 							{" "}
 							<button className="button">
 								<Link to="/books/">Books</Link>
 							</button>
-						</li>
+						</li> */}
 						<li>
 							<button id="signs">
 								<Link to="" onClick={handleSignout}>

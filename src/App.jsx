@@ -1,6 +1,7 @@
 // REACT RESOURCE
 import { Routes, Route, useNavigate, Navigate} from "react-router-dom";
 import { useState, createContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 // BOOTSTRAP
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -50,13 +51,13 @@ const App = () => {
 	const handleAddBook = async (bookFormData) => {
 		const newBook = await bookService.create(bookFormData);
 		setBooks([newBook, ...books]);
-		navigate("/books");
+		navigate("/");
 	};
 
 	const handleDeleteBook = async (bookId) => {
 		const deletedBook = await bookService.deleteBook(bookId);
 		setBooks(books.filter((book) => book._id !== deletedBook._id));
-		navigate("/books");
+		navigate("/");
 	};
 
 	const handleUpdateBook = async (bookId, bookFormData) => {
@@ -76,7 +77,7 @@ const App = () => {
 			<Routes>
 				{user ? (
 					<>
-						<Route path="/" element={<Dashboard user={user} />} />
+						<Route path="/" element={<Dashboard user={user} books={books} />} />
 						<Route path="/books" element={<BookList books={books} />} />
 						<Route
 							path="/books/:bookId"

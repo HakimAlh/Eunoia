@@ -27,29 +27,39 @@ const BookDetails = (props) => {
 	return (
 		<main className={styles.container}>
 			<header>
-				<p>{book.category.toUpperCase()}</p>
+				<p style={{  fontSize: '30px'}}>{book.category.toUpperCase()}</p>
+			<img style={{ height: '350px', alignItems: 'left'}} src={book.cover}></img>
 				<h1>{book.title}</h1>
+				
 				<p>
-					{book.author.username} posted on
-					{new Date(book.createdAt).toLocaleDateString()}
+					Authored By: {book.author.username} 
 				</p>
 				{/* {book.author._id === user._id && ( */}
 				<>
-					<button onClick={() => props.handleDeleteBook(bookId)}>Delete</button>
+				<div style={{  padding: '20px'}}>
                     <Link to={`/books/${bookId}/edit`}>Edit</Link>
-					<Link to={`/books/${bookId}/ChapterNew`}>Add a Chapter</Link>
-					<Link to={`/books/${bookId}/ChapterView`}>Read</Link>
+					<Link to={`/books/${bookId}/ChapterNew`}>Add</Link>
+					<button style={{  padding: '20px'}}onClick={() => props.handleDeleteBook(bookId)}>Delete</button>
+					</div>
 				</>
 				{/* )} */}
 			</header>
 			<p>{book.text}</p>
+			<div style={{ height: '200px', overflow: 'scroll', flexDirection: 'column' }}>
+			</div>
+			<hr/>
+			<h3>Description</h3>
+			<h6 style={{  textAlign: 'center'}}> {book.description}</h6>
 			<section>
+				<hr/>
 				<h2>Chapters</h2>
 				<hr/>
 				{book.chapters.map((chapter) => (
 					
 					 <Link key={chapter._id} to={`/books/${bookId}/${chapter._id}`}>
-					  <h2>{chapter.title}</h2>
+						<ul>
+					  <li>{chapter.title}</li>
+					  </ul>
 					  </Link>
           ))}
 			</section>

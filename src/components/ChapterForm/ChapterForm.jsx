@@ -25,12 +25,10 @@ const ChapterForm = (props) => {
 	return (
 		<>
 			<main className={styles.container}>
-				<form onSubmit={handleSubmit}>
-					<div className="card text-center">
-						<div className="card-header">
-							<label htmlFor="exampleFormControlInput1" className="form-label">
-							</label>
-							<input
+			<form onSubmit={handleSubmit}>
+				{/* <h1>{chapterId ? "Edit Your Book" : "Add your new Book"}</h1> */}
+				<label htmlFor="title-input">Title</label>
+				<input
 					required
 					type="text"
 					name="title"
@@ -38,10 +36,7 @@ const ChapterForm = (props) => {
 					value={formData.title}
 					onChange={handleChange}
 				/>
-						</div>
-						<div className="card-body">
-							<div className="mb-3">
-							<label htmlFor="content-input">Content</label>
+				<label htmlFor="cover-input">Page Content:</label>
 				<textarea
 					required
 					type="text"
@@ -50,15 +45,12 @@ const ChapterForm = (props) => {
 					value={formData.content}
 					onChange={handleChange}
 				/>
-							</div>
-							<button type="submit">SUBMIT</button>
-						</div>
-						<div className="card-footer text-body-secondary"></div>
-					</div>
-				</form>
-			</main>
+				<button type="submit">SUBMIT</button>
+			</form>
+		</main>
 		</>
 	);
 };
 
 export default ChapterForm;
+

@@ -9,6 +9,7 @@
     position: fixed; 
     padding: 35px 100px;
     align-items: center;
+    font-size: 21px;
     /* background: white;
     border-bottom: 1px solid rgb(200, 200, 200); */
   }
@@ -40,28 +41,47 @@
       font-size: 15px;
     }
   }
-  button {
-    border: rgb(163, 163, 163) solid 1px;
-    border-radius: 30px;
-    width: 8vw;
-    height: 2vw;
-    background-color: white;
-    text-align: center;
-  }
 
-  button:hover {
-    border: rgb(163, 163, 163) solid 1px;
-    border-radius: 30px;
-    width: 3w;
-    height: 3vw;
-    transition: all 0.5s;
-    background-color: rgb(223, 223, 223);
-    text-align: center;
-  }
+button {
+  height: 30px;
+  width: 100px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
 
-  /* .material-symbols-outlined{
-    margin: 20px;
-  } */
-   /* nav {
-    background-color: #0047cc3d;
-   } */
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #000000;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}

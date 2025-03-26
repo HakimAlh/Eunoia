@@ -19,9 +19,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: Kavivanar, sans-serif;
-    /* background-image: url("https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9va3xlbnwwfHwwfHx8MA%3D%3D"); */
+    /* background-image: url("https://images.unsplash.com/vector-1742740878620-9809dab0fd52?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
     background-position: center;
-    /* filter: blur(1px); */
+   backdrop-filter: blur(1px);
     --primary: #00a0df;
     --background: #f2f4f8;
     --card-background: white;
@@ -87,14 +87,9 @@
     -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
     -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   }
-  a
-  button, a {
-    cursor: pointer;
-    font-family: Kavivanar, sans-serif;
-    font-size: 18px;
-  }
 
   main {
     width: 50vw;
     margin-left: 26vw;
 }
+
