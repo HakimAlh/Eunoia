@@ -47,10 +47,10 @@ const BookForm = (props) => {
 					value={formData.title}
 					onChange={handleChange}
 				/>
-				<label htmlFor="cover-input">Cover</label>
+				<label htmlFor="cover-input">Cover: (Image Url)</label>
 				<input
 					required
-					type="file"
+					type="text"
 					name="cover"
 					id="cover-input"
 					value={formData.cover}

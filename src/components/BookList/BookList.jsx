@@ -4,6 +4,7 @@ import styles from '../BookList/BookList.module.css';
 
 
 const BookList = (props) => {
+  console.log( props.books)
 	return (
         <main className={styles.container}>
           {props.books.map((book) => (
@@ -11,6 +12,7 @@ const BookList = (props) => {
               <article>
                 <header>
                   <h2>{book.title}</h2>
+                  <img src="{book.image}" alt="" />
                   <p>
 
                   </p>

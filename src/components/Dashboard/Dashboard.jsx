@@ -1,6 +1,7 @@
 import styles from '../Dashboard/Dashboard.module.css';
-
+import ScrollableComponent from '../Scrollable/Scrollable';
 const Dashboard = ({ user }) => {
+  
 	return (
 		<>
 <section className={styles.about}>
@@ -17,7 +18,9 @@ const Dashboard = ({ user }) => {
             </p>
           </article>
         </section>
+        <ScrollableComponent/>
 	  </>
+    
 	);
 };
 

@@ -16,12 +16,14 @@ const BookDetails = (props) => {
 			const bookData = await bookService.show(bookId);
 			console.log("bookData", bookData);
 			setBook(bookData);
+			// props.settingCurrentBook(bookData)
 		};
 		fetchBook();
 	}, [bookId]);
 
 	if (!book) return <main>Loading...</main>;
 
+	
 	return (
 		<main className={styles.container}>
 			<header>
@@ -42,7 +44,14 @@ const BookDetails = (props) => {
 			</header>
 			<p>{book.text}</p>
 			<section>
-				<h2>Comments</h2>
+				<h2>Chapters</h2>
+				<hr/>
+				{book.chapters.map((chapter) => (
+					
+					 <Link key={chapter._id} to={`/books/${bookId}/${chapter._id}`}>
+					  <h2>{chapter.title}</h2>
+					  </Link>
+          ))}
 			</section>
 		</main>
 	);

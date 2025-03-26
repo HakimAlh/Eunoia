@@ -87,6 +87,17 @@ const deleteBook = async (bookId) => {
     }
   }
 
+
+  const showChapter = async (chapterId) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${chapterId}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
 
-  export { index, show, create, deleteBook, createChapter, update};
+  export { index, show, create, deleteBook, createChapter, update, showChapter};

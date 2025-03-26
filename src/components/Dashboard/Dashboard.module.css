@@ -1,14 +1,37 @@
+@keyframes featured {
+  from {background-color: rgba(184, 184, 184, 0.425);}
+  to {background-color: rgb(253, 253, 253);}
+}
+
+@keyframes featured {
+  from {background-color: rgba(184, 184, 184, 0.425);}
+  to {background-color: rgb(253, 253, 253);}
+}
+@keyframes slide-in {
+  from {
+    translate: 0vw 50vw;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+
+}
 
   .about {
     display: flex;
     margin-left: 130px;
     height: 430px;
     width: 80vw;
-    background-color: rgba(255, 255, 255, 0.806);
+    background-color:   #ffb9b9ce;
     border-radius: 20px;
     box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.15);
+    animation-name: slide-in;
+    animation-duration: 2s;
   }
   
   .about header {

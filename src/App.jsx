@@ -30,7 +30,6 @@ import ChapterView from "./components/ChapterView/ChapterView";
 const App = () => {
 	const [user, setUser] = useState(authService.getUser());
 	const [books, setBooks] = useState([]);
-	const [chapters, setChapters] = useState([]);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -88,11 +87,8 @@ const App = () => {
 							element={<BookForm handleUpdateBook={handleUpdateBook} />}
 						/>
 						<Route
-							path="/books/:bookId/ChapterView"
-							element={<ChapterView />}
-						/>
-						<Route
-							path="/books/:bookId/chapter"
+							path="/books/:bookId/:chapterId"
+							element={<ChapterView books = {books}/>}
 						/>
 						<Route
 							path="/books/:bookId/ChapterNew"
