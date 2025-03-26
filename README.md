@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/57f50105-ea48-4dd1-8145-cfd452fa7e54)
 
 ## Welcome to Eunoia!
 A community-driven Library where Users are able to read other's created books, and you can create your own!
@@ -8,17 +9,20 @@ Try out my App ---> https://eunoia-pi.vercel.app/
 
 Note: Better experience in PC/Laptop (Mobile isn't optimized)
 
+
 My Trello Plans ---> https://trello.com/b/VkXwF9OO/eunoia
 
 
 
 ## Main Menu (Logged in)
+![Menu](https://github.com/user-attachments/assets/abbf124b-6f8b-450a-b23a-9bab79f9677b)
 
-
-## Book Viewed
+## Book Viewed (Zoomed out to show the whole content)
+![image](https://github.com/user-attachments/assets/0db4a6ff-8766-4f16-9f35-7c4188e30b3b)
 
 
 ## Chapter Viewed
+![image](https://github.com/user-attachments/assets/fc7ea679-b6ed-446f-8022-d0470306a620)
 
 
 ## Code Languages used
