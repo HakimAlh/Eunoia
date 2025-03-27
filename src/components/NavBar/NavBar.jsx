@@ -35,13 +35,19 @@ const NavBar = ({ user, handleSignout }) => {
 					</ul>
 				</nav>
 			) : (
-				<nav>
+				<nav className={styles.container}>
+					<span className="material-symbols-outlined">menu_book</span>
+					<Link to="/">Eunoia</Link>
 					<ul>
 						<li>
+							<button>
 							<Link to="/signin">Sign In</Link>
+							</button>
 						</li>
 						<li>
+							<button>
 							<Link to="/signup">Sign Up</Link>
+							</button>
 						</li>
 					</ul>
 				</nav>

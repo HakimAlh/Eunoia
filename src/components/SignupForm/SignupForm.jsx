@@ -38,7 +38,7 @@ const SignupForm = (props) => {
 
   return (
     <main>
-      <h1>Sign Up</h1>
+      <h1 style={signout}>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
         <div>
@@ -81,5 +81,12 @@ const SignupForm = (props) => {
     </main>
   );
 };
+
+const signout = {
+  textAlign: "center",
+  marginRight: '55px',
+  lineHeight: "45px"
+
+}
 
 export default SignupForm;

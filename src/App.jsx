@@ -65,7 +65,7 @@ const App = () => {
 
 		setBooks(books.map((book) => (bookId === book._id ? updatedBook : book)));
 
-		navigate(`/books/${bookId}`);
+		navigate(`/`);
 	};
 
 

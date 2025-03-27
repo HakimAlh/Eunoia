@@ -35,7 +35,7 @@ const SigninForm = (props) => {
 
   return (
     <main>
-      <h1>Log In</h1>
+      <h1 style={signin}>Log In</h1>
       <p>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div>
@@ -71,4 +71,11 @@ const SigninForm = (props) => {
   );
 };
 
+
+const signin = {
+  textAlign: "center",
+  marginRight: '55px',
+  lineHeight: "45px"
+
+}
 export default SigninForm;
