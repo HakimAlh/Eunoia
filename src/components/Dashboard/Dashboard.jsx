@@ -34,6 +34,8 @@ const Dashboard = (props) => {
 				<article></article>
 			</section>
 
+					<hr />
+					<h1 style={text}>Latest Books</h1>
 			<div style={{ height: "200px" }}>
 				<main className={styles.container}>
 					{props.books.map((book) => (
@@ -60,5 +62,11 @@ const Dashboard = (props) => {
 		</>
 	);
 };
+
+const text = {
+    textAlign: "left",
+	marginTop: '10px',
+    marginLeft: "375px",
+}
 
 export default Dashboard;

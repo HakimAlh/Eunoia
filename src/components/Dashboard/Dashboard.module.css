@@ -13,11 +13,10 @@
 }
 
 
-/* From Uiverse.io by gharsh11032000 */ 
 .about {
-  margin-left: 130px;
-  height: 430px;
-  width: 80vw;
+  margin-left: 60px;
+  height: 380px;
+  width: 90vw;
   background-image: url('https://www.shutterstock.com/image-vector/fedora-hat-magnifying-glass-notepad-600nw-1955570302.jpg');
   border-radius: 8px;
   color: white;
@@ -157,9 +156,8 @@
 .container {
     gap: 14px;
     width: 50%;
-    display:grid;
+    display:flex;
     padding: 21px;
-    grid-template-columns: repeat(1, 1fr);
     animation-name: slide-in;
     animation-duration: 1s;
    
